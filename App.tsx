@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import PlatformPage from './pages/PlatformPage';
 import PilotProgramPage from './pages/PilotProgramPage';
-import IndustriesPage from './pages/IndustriesPage';
+
 import LegalPage from './pages/LegalPage';
 import FinancialPage from './pages/FinancialPage';
 import GovernmentPage from './pages/GovernmentPage';

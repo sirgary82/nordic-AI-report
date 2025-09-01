@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="sticky" color="background" elevation={1}>
+    <AppBar position="sticky" color="default" elevation={1}>
       <Toolbar sx={{ justifyContent: 'space-between', maxWidth: 1200, margin: '0 auto', width: '100%' }}>
         <Box component={Link} to="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
           <Typography variant="h6" component="div" sx={{ fontWeight: 700, color: 'primary.main' }}>
