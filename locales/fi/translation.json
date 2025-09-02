@@ -212,4 +212,24 @@
   "footer_contact_pilot": "Liity pilottiohjelmaan",
   "footer_contact_demo": "Pyydä demo",
   "footer_contact_support": "Saa tukea"
+  ,
+  "nordicApproach.title": "Kaksi lähestymistapaa tekoälyyn",
+  "nordicApproach.american.title": "Amerikkalainen lähestymistapa",
+  "nordicApproach.american.body": "Nopea, riskinottoon perustuva, usein 'move fast and break things' -mentaliteetti. Keskittyy nopeaan markkinoille pääsyyn ja laajaan skaalautuvuuteen, joskus sääntelyn ja datasuvereniteetin kustannuksella.",
+  "nordicApproach.american.list": [
+    "Nopea käyttöönotto, usein MVP ensin",
+    "Globaali skaalautuvuus etusijalla",
+    "Vähemmän painoarvoa datasuvereniteetille",
+    "Sääntelyyn sopeudutaan jälkikäteen",
+    "Kulttuurinen painotus innovaatiolle ja riskinotolle"
+  ],
+  "nordicApproach.nordic.title": "Pohjoismainen lähestymistapa",
+  "nordicApproach.nordic.body": "Pragmaattinen, vastuullinen ja datasuvereniteettiin keskittyvä. Painottaa sääntelyn noudattamista, tietoturvaa ja paikallista kontekstia, mikä mahdollistaa kestävän ja luotettavan tekoälyn käyttöönoton.",
+  "nordicApproach.nordic.list": [
+    "Datasuvereniteetti ja tietoturva ensisijaisia",
+    "Sääntely ja compliance suunnittelun lähtökohtana",
+    "Paikallinen kieli ja kulttuuri huomioitu",
+    "Pitkäjänteinen, kestävä kehitys",
+    "Luottamus ja vastuullisuus keskiössä"
+  ]
 }
