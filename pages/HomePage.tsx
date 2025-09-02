@@ -3,9 +3,10 @@ import { Box, Button, Container, Typography, Grid, Card, CardContent } from '@mu
 import { Link } from 'react-router-dom';
 import { CheckCircleOutline } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import PageContainer from '../components/PageContainer';
 
 const ValuePropCard: React.FC<{ icon: string; title: string; subtitle: string; items: string[] }> = ({ icon, title, subtitle, items }) => (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
         <CardContent sx={{ p: 4 }}>
             <Typography variant="h2" sx={{ mb: 1 }}>{icon}</Typography>
             <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 1 }}>{title}</Typography>
@@ -26,33 +27,19 @@ const HomePage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM.jpeg">
       {/* Hero Section */}
       <Box sx={{
-        position: 'relative',
         color: 'white',
         py: { xs: 8, md: 12 },
         textAlign: 'center',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '70vh',
-        '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: 'url(/images/hero-background.jpeg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.6)',
-            zIndex: -1,
-        }
+        minHeight: '50vh',
       }}>
         <Container maxWidth="md">
-          <Typography variant="h1" component="h1" sx={{ mb: 2, textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+          <Typography variant="h2" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
             {t('hero_title')}
           </Typography>
           <Typography variant="h5" component="p" sx={{ mb: 4, opacity: 0.9, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
@@ -129,7 +116,7 @@ const HomePage: React.FC = () => {
           </Grid>
         </Container>
       </Box>
-    </>
+    </PageContainer>
   );
 };
 

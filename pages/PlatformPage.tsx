@@ -2,9 +2,10 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, Paper } from '@mui/material';
 import { CheckCircleOutline, Security, Storage, Code } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import PageContainer from '../components/PageContainer';
 
 const FeatureCard: React.FC<{ icon: React.ReactElement; title: string; description: string }> = ({ icon, title, description }) => (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <CardContent sx={{ p: 3, textAlign: 'center' }}>
             {icon}
             <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mt: 2, mb: 1 }}>{title}</Typography>
@@ -17,136 +18,74 @@ const PlatformPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <>
-      {/* Page Header */}
-      <Box sx={{ bgcolor: 'primary.main', color: 'white', py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h1" component="h1" sx={{ mb: 2 }}>
-            {t('platform_title')}
+    <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM_6_46PM.jpeg">
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography 
+          variant="h3" 
+          component="h1" 
+          align="center" 
+          color="white"
+          sx={{ 
+            mb: 6, 
+            fontWeight: 700,
+            textShadow: '1px 1px 4px rgba(0,0,0,0.5)'
+          }}
+        >
+          {t('platform.title', 'Our AI Platform')}
+        </Typography>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6} lg={3}>
+            <FeatureCard
+              icon={<Security sx={{ fontSize: 40, color: 'primary.main' }} />}
+              title={t('platform.security.title', 'Enterprise Security')}
+              description={t('platform.security.description', 'Military-grade security with data isolation and encryption at all levels.')}
+            />
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <FeatureCard
+              icon={<Storage sx={{ fontSize: 40, color: 'primary.main' }} />}
+              title={t('platform.data.title', 'Data Sovereignty')}
+              description={t('platform.data.description', 'Your data remains in your control, within Nordic borders, compliant with all EU regulations.')}
+            />
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <FeatureCard
+              icon={<Code sx={{ fontSize: 40, color: 'primary.main' }} />}
+              title={t('platform.integration.title', 'Easy Integration')}
+              description={t('platform.integration.description', 'Straightforward API integration with your existing systems and workflows.')}
+            />
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <FeatureCard
+              icon={<CheckCircleOutline sx={{ fontSize: 40, color: 'primary.main' }} />}
+              title={t('platform.compliance.title', 'Regulatory Compliance')}
+              description={t('platform.compliance.description', 'Built from the ground up to meet Nordic and EU regulatory requirements.')}
+            />
+          </Grid>
+        </Grid>
+
+        <Paper 
+          elevation={3} 
+          sx={{ 
+            mt: 8, 
+            p: 4, 
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            borderRadius: 2
+          }}
+        >
+          <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 600 }}>
+            {t('platform.details.title', 'Platform Details')}
           </Typography>
-          <Typography variant="h5" component="p" sx={{ opacity: 0.9 }}>
-            {t('platform_subtitle')}
+          <Typography paragraph>
+            {t('platform.details.description1', 'Our AI platform is designed specifically for Nordic organizations that require the highest levels of security, data privacy, and regulatory compliance. By keeping all data processing within Nordic borders, we ensure complete data sovereignty.')}
           </Typography>
-        </Container>
-      </Box>
-
-      {/* Core Capabilities */}
-      <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg">
-          <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 8 }}>{t('platform_capabilities_title')}</Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <FeatureCard 
-                icon={<Code sx={{ fontSize: 40, color: 'primary.main' }} />}
-                title={t('platform_capability_1_title')}
-                description={t('platform_capability_1_desc')}
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <FeatureCard 
-                icon={<Storage sx={{ fontSize: 40, color: 'primary.main' }} />}
-                title={t('platform_capability_2_title')}
-                description={t('platform_capability_2_desc')}
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <FeatureCard 
-                icon={<Security sx={{ fontSize: 40, color: 'primary.main' }} />}
-                title={t('platform_capability_3_title')}
-                description={t('platform_capability_3_desc')}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-      
-      {/* Architecture Overview */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
-        <Container maxWidth="lg">
-            <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 8 }}>{t('platform_architecture_title')}</Typography>
-            <Paper elevation={3} sx={{ p: 4, borderRadius: 4 }}>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2}}>{t('platform_architecture_subtitle')}</Typography>
-                <Typography variant="body1" sx={{ mb: 2 }}>
-                    {t('platform_architecture_desc')}
-                </Typography>
-                <Grid container spacing={4}>
-                    <Grid item md={6} xs={12}>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{t('platform_architecture_small_model_title')}</Typography>
-                        <Typography variant="body2">
-                            {t('platform_architecture_small_model_desc')}
-                        </Typography>
-                    </Grid>
-                    <Grid item md={6} xs={12}>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{t('platform_architecture_large_model_title')}</Typography>
-                        <Typography variant="body2">
-                            {t('platform_architecture_large_model_desc')}
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Paper>
-        </Container>
-      </Box>
-
-      {/* Deployment Options */}
-      <Box id="deployment" sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg">
-          <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 8 }}>{t('platform_deployment_title')}</Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<Storage sx={{ fontSize: 40, color: 'primary.main' }} />}
-                    title={t('platform_deployment_1_title')}
-                    description={t('platform_deployment_1_desc')}
-                />
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<Security sx={{ fontSize: 40, color: 'primary.main' }} />}
-                    title={t('platform_deployment_2_title')}
-                    description={t('platform_deployment_2_desc')}
-                />
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<Code sx={{ fontSize: 40, color: 'primary.main' }} />}
-                    title={t('platform_deployment_3_title')}
-                    description={t('platform_deployment_3_desc')}
-                />
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Security & Compliance */}
-      <Box id="security" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
-        <Container maxWidth="lg">
-          <Typography variant="h2" component="h2" sx={{ textAlign: 'center', mb: 8 }}>{t('platform_security_title')}</Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<CheckCircleOutline sx={{ fontSize: 40, color: 'success.main' }} />}
-                    title={t('platform_security_1_title')}
-                    description={t('platform_security_1_desc')}
-                />
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<CheckCircleOutline sx={{ fontSize: 40, color: 'success.main' }} />}
-                    title={t('platform_security_2_title')}
-                    description={t('platform_security_2_desc')}
-                />
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <FeatureCard 
-                    icon={<CheckCircleOutline sx={{ fontSize: 40, color: 'success.main' }} />}
-                    title={t('platform_security_3_title')}
-                    description={t('platform_security_3_desc')}
-                />
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-    </>
+          <Typography paragraph>
+            {t('platform.details.description2', 'The platform supports a wide range of AI capabilities including natural language processing, document analysis, decision support, and predictive analytics - all while ensuring your data never leaves your control.')}
+          </Typography>
+        </Paper>
+      </Container>
+    </PageContainer>
   );
 };
 
