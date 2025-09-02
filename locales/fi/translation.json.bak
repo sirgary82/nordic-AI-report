@@ -1,4 +1,4 @@
-{  "market.title": "€500M+ markkinan haltuunotto",
+  "market.title": "€500M+ markkinan haltuunotto",
   "market.subtitle": "Strategiamme keskittyy ensin Suomen markkinoiden valtaamiseen ja laajentuu sitten Pohjoismaihin ja muihin pienikielisiin maihin, joilla on vastaavat suvereniteettitarpeet.",
   "market.focus_title": "Strategiset painopistealueet",
   "market.focus_desc": "Kohdistamme korkean arvon, vahvasti säännellyille toimialoille, joissa sääntely- ja kielietumme ovat ratkaisevia.",
@@ -126,5 +126,4 @@
   "techwave.agentic_adoption_value": "15 % nykyään ➔ 64 % vuoteen 2027 mennessä.",
   "techwave.agentic_local_label": "Paikallinen ajuri:",
   "techwave.agentic_local_value": "Eurooppalaiset tietosuojavaatimukset edellyttävät ihmisen valvontaa, jonka alustamme hallittu monen agentin järjestelmä mahdollistaa."
-}
 }
