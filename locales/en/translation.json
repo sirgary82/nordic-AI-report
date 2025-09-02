@@ -101,5 +101,15 @@
   "techwave.agentic_adoption_label": "Adoption Projection:",
   "techwave.agentic_adoption_value": "From 15% today to 64% by 2027.",
   "techwave.agentic_local_label": "Local Driver:",
-  "techwave.agentic_local_value": "European privacy concerns demand human oversight, which our platform's controlled multi-agent system provides."
+  "techwave.agentic_local_value": "European privacy concerns demand human oversight, which our platform's controlled multi-agent system provides.",
+  "footer_platform_overview": "Platform Overview",
+  "footer_platform_security": "Security & Compliance",
+  "footer_platform_deployment": "Deployment Options",
+  "footer_industries_legal": "Legal",
+  "footer_industries_financial": "Financial",
+  "footer_industries_government": "Government",
+  "footer_industries_healthcare": "Healthcare",
+  "footer_contact_pilot": "Join Pilot Program",
+  "footer_contact_demo": "Request Demo",
+  "footer_contact_support": "Get Support"
 }
