@@ -211,5 +211,25 @@
   "footer_industries_healthcare": "Healthcare",
   "footer_contact_pilot": "Join Pilot Program",
   "footer_contact_demo": "Request Demo",
-  "footer_contact_support": "Get Support"
+  "footer_contact_support": "Get Support",
+  
+  "nordicApproach.title": "Two Approaches to AI",
+  "nordicApproach.american.title": "American Approach",
+  "nordicApproach.american.body": "Fast, risk-taking, often with a 'move fast and break things' mentality. Focuses on rapid market entry and wide scalability, sometimes at the expense of regulation and data sovereignty.",
+  "nordicApproach.american.list": [
+    "Rapid deployment, often MVP first",
+    "Global scalability prioritized",
+    "Less emphasis on data sovereignty",
+    "Regulation adapted to after the fact",
+    "Cultural emphasis on innovation and risk-taking"
+  ],
+  "nordicApproach.nordic.title": "Nordic Approach",
+  "nordicApproach.nordic.body": "Pragmatic, responsible, and focused on data sovereignty. Emphasizes regulatory compliance, data security, and local context, enabling sustainable and reliable AI adoption.",
+  "nordicApproach.nordic.list": [
+    "Data sovereignty and security first",
+    "Regulation and compliance as design principles",
+    "Local language and culture considered",
+    "Long-term, sustainable development",
+    "Trust and responsibility at the center"
+  ]
 }
