@@ -6,6 +6,7 @@ import OpportunitySection from '../components/report/OpportunitySection';
 import TechWaveSection from '../components/report/TechWaveSection';
 import AdvantageSection from '../components/report/AdvantageSection';
 import MarketSection from '../components/report/MarketSection';
+import NordicApproachSection from '../components/report/NordicApproachSection';
 import PageContainer from '../components/PageContainer';
 
 const NordicAIReportPage: React.FC = () => {
@@ -35,15 +36,16 @@ const NordicAIReportPage: React.FC = () => {
                             textShadow: '1px 1px 2px rgba(0,0,0,0.2)' 
                         }}
                     >
-                        {t('report.intro', 'A comprehensive analysis of AI opportunities and advantages in the Nordic region')}
+                        {t('report.intro', 'A monumental shift is underway. While 90% of global AI projects fail, our Nordic approach delivers working solutions that create real business value.')}
                     </Typography>
                 </Container>
             </Box>
 
-            <OpportunitySection />
-            <TechWaveSection />
+            <NordicApproachSection />
             <AdvantageSection />
+            <OpportunitySection />
             <MarketSection />
+            <TechWaveSection />
         </PageContainer>
     );
 };

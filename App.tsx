@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import PlatformPage from './pages/PlatformPage';
 import PilotProgramPage from './pages/PilotProgramPage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
 
 import LegalPage from './pages/LegalPage';
 import FinancialPage from './pages/FinancialPage';
@@ -25,7 +27,10 @@ const App: React.FC = () => {
           <Navbar />
           <Box component="main" sx={{ flexGrow: 1 }}>
             <Routes>
-              <Route path="/" element={<NordicAIReportPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/nordic-ai-report" element={<NordicAIReportPage />} />
               <Route path="/platform" element={<PlatformPage />} />
               <Route path="/pilot-program" element={<PilotProgramPage />} />
               <Route path="/legal" element={<LegalPage />} />
