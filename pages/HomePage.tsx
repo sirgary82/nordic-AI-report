@@ -43,14 +43,47 @@ const HomePage: React.FC = () => {
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
+            borderRadius: 3,
             p: { xs: 3, md: 5 },
           }}>
             <CardContent>
-              <Typography variant="h2" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '1px 1px 3px rgba(0,0,0,0.6)' }}>
+              <Typography
+                variant="h2"
+                component="h1"
+                sx={{
+                  mb: 4,
+                  fontWeight: 700,
+                  fontSize: '1.8rem',
+                  lineHeight: 1.2,
+                  fontFamily: 'Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+                  color: 'white',
+                  textAlign: 'center',
+                  textShadow: '1px 1px 3px rgba(0,0,0,0.5)',
+                  WebkitFontSmoothing: 'antialiased',
+                  boxSizing: 'inherit',
+                  margin: '0px 0px 40px',
+                }}
+              >
                 {t('company_hero_title')}
               </Typography>
-              <Typography variant="h5" component="p" sx={{ mb: 4, opacity: 0.95, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+              <Typography
+                variant="h5"
+                component="p"
+                sx={{
+                  mb: 4,
+                  fontWeight: 400,
+                  fontSize: '1.5rem',
+                  lineHeight: 1.334,
+                  fontFamily: 'Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+                  color: 'white',
+                  textAlign: 'center',
+                  opacity: 0.95,
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                  WebkitFontSmoothing: 'antialiased',
+                  boxSizing: 'inherit',
+                  margin: '0px 0px 32px',
+                }}
+              >
                 {t('company_hero_subtitle')}
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: 'center', justifyContent: 'center', gap: 2 }}>
@@ -74,48 +107,66 @@ const HomePage: React.FC = () => {
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
-                <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+                <Card sx={{ 
+                  height: '100%', 
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: 3
+                }}>
                     <CardContent sx={{ p: 4, textAlign: 'center' }}>
-                        <Typography variant="h2" sx={{ mb: 2 }}>🛠️</Typography>
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2 }}>
+                        <Typography variant="h2" sx={{ mb: 2, color: 'white' }}>🛠️</Typography>
+                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2, color: 'white', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
                           {t('company_product_title')}
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_product_desc')}
                         </Typography>
-                        <Button variant="outlined" color="primary" component={Link} to="/platform">
+                        <Button variant="outlined" color="inherit" component={Link} to="/platform" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
                           {t('company_product_button')}
                         </Button>
                     </CardContent>
                 </Card>
             </Grid>
             <Grid item xs={12} md={4}>
-                <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+                <Card sx={{ 
+                  height: '100%', 
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: 3
+                }}>
                     <CardContent sx={{ p: 4, textAlign: 'center' }}>
-                        <Typography variant="h2" sx={{ mb: 2 }}>👨‍💼</Typography>
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2 }}>
+                        <Typography variant="h2" sx={{ mb: 2, color: 'white' }}>👨‍💼</Typography>
+                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2, color: 'white', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
                           {t('company_consulting_title')}
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_consulting_desc')}
                         </Typography>
-                        <Button variant="outlined" color="primary" component={Link} to="/services">
+                        <Button variant="outlined" color="inherit" component={Link} to="/services" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
                           {t('company_consulting_button')}
                         </Button>
                     </CardContent>
                 </Card>
             </Grid>
             <Grid item xs={12} md={4}>
-                <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+                <Card sx={{ 
+                  height: '100%', 
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: 3
+                }}>
                     <CardContent sx={{ p: 4, textAlign: 'center' }}>
-                        <Typography variant="h2" sx={{ mb: 2 }}>🤝</Typography>
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2 }}>
+                        <Typography variant="h2" sx={{ mb: 2, color: 'white' }}>🤝</Typography>
+                        <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 2, color: 'white', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
                           {t('company_partnership_title')}
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_partnership_desc')}
                         </Typography>
-                        <Button variant="outlined" color="primary" component={Link} to="/contact">
+                        <Button variant="outlined" color="inherit" component={Link} to="/contact" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
                           {t('company_partnership_button')}
                         </Button>
                     </CardContent>
