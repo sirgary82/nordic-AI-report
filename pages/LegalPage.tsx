@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Card, CardContent } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent } from '@mui/material';
 import { Gavel, VerifiedUser, FindInPage, HistoryEdu } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
@@ -11,10 +11,10 @@ interface CaseCardProps {
 }
 
 const CaseCard: React.FC<CaseCardProps> = ({ icon, title, description }) => (
-  <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+  <Card>
     <CardContent>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        {React.cloneElement(icon, { sx: { fontSize: 28, color: 'primary.main', mr: 2 } })}
+        {React.cloneElement(icon, { sx: { fontSize: 28, mr: 2 } })}
         <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
           {title}
         </Typography>
@@ -44,13 +44,10 @@ const LegalPage: React.FC = () => {
           {t('legal.title', 'Legal AI Solutions')}
         </Typography>
 
-        <Paper 
-          elevation={3} 
+        <Card
           sx={{ 
             p: 4, 
             mb: 6,
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: 2
           }}
         >
           <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 600 }}>
@@ -59,7 +56,7 @@ const LegalPage: React.FC = () => {
           <Typography paragraph>
             {t('legal.overview.description', 'Our legal AI solutions are specifically designed for law firms and legal departments in the Nordic region, addressing the unique challenges of multilingual legal systems, data privacy regulations, and client confidentiality requirements.')}
           </Typography>
-        </Paper>
+        </Card>
 
         <Typography 
           variant="h4" 

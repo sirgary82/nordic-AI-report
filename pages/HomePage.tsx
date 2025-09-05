@@ -6,16 +6,22 @@ import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
 
 const ValuePropCard: React.FC<{ icon: string; title: string; subtitle: string; items: string[] }> = ({ icon, title, subtitle, items }) => (
-    <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+    <Card sx={{
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        borderRadius: 3
+    }}>
         <CardContent sx={{ p: 4 }}>
-            <Typography variant="h2" sx={{ mb: 1 }}>{icon}</Typography>
-            <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 1 }}>{title}</Typography>
-            <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 600, mb: 2 }}>{subtitle}</Typography>
+            <Typography variant="h2" sx={{ mb: 1, color: 'white' }}>{icon}</Typography>
+            <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 1, color: 'white' }}>{title}</Typography>
+            <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2, color: 'white' }}>{subtitle}</Typography>
             <Box component="ul" sx={{ p: 0, listStyle: 'none' }}>
                 {items.map((item, index) => (
                     <Box component="li" key={index} sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                         <CheckCircleOutline color="success" sx={{ mr: 1 }} />
-                        <Typography variant="body2" color="text.secondary">{item}</Typography>
+                        <Typography variant="body2" sx={{ color: 'white' }}>{item}</Typography>
                     </Box>
                 ))}
             </Box>
@@ -90,7 +96,7 @@ const HomePage: React.FC = () => {
                 <Button variant="contained" color="secondary" component={Link} to="/about" size="large">
                   {t('company_about_button')}
                 </Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/services" size="large" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
+                <Button variant="contained" color="secondary" component={Link} to="/services" size="large">
                   {t('company_services_button')}
                 </Button>
               </Box>
@@ -122,7 +128,7 @@ const HomePage: React.FC = () => {
                         <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_product_desc')}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={Link} to="/platform" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
+                        <Button variant="contained" color="secondary" component={Link} to="/platform" size="large">
                           {t('company_product_button')}
                         </Button>
                     </CardContent>
@@ -144,7 +150,7 @@ const HomePage: React.FC = () => {
                         <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_consulting_desc')}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={Link} to="/services" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
+                        <Button variant="contained" color="secondary" component={Link} to="/services" size="large">
                           {t('company_consulting_button')}
                         </Button>
                     </CardContent>
@@ -166,7 +172,7 @@ const HomePage: React.FC = () => {
                         <Typography variant="body1" paragraph sx={{ color: 'white' }}>
                           {t('company_partnership_desc')}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={Link} to="/contact" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
+                        <Button variant="contained" color="secondary" component={Link} to="/contact" size="large">
                           {t('company_partnership_button')}
                         </Button>
                     </CardContent>
@@ -185,7 +191,7 @@ const HomePage: React.FC = () => {
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
                 <ValuePropCard 
-                    icon="�"
+                    icon=""
                     title={t('company_value_prop_1_title')}
                     subtitle={t('company_value_prop_1_subtitle')}
                     items={[
@@ -198,7 +204,7 @@ const HomePage: React.FC = () => {
             </Grid>
             <Grid item xs={12} md={6}>
                 <ValuePropCard 
-                    icon="�🇺"
+                    icon="🇺"
                     title={t('company_value_prop_2_title')}
                     subtitle={t('company_value_prop_2_subtitle')}
                     items={[
@@ -242,7 +248,14 @@ const HomePage: React.FC = () => {
       {/* CTA Section */}
       <Box sx={{ py: { xs: 6, md: 8 } }}>
         <Container maxWidth="md">
-          <Card sx={{ backgroundColor: 'rgba(44, 62, 80, 0.95)', color: 'white', textAlign: 'center' }}>
+          <Card sx={{
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: 3,
+            color: 'white', 
+            textAlign: 'center'
+          }}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
                 {t('company_cta_title')}

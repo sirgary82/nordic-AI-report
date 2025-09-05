@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Card, CardContent } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent } from '@mui/material';
 import { TrendingUp, Security, Assessment, AccountBalance, Payments } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
@@ -11,10 +11,10 @@ interface UseCardProps {
 }
 
 const UseCard: React.FC<UseCardProps> = ({ icon, title, description }) => (
-  <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+  <Card>
     <CardContent>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        {React.cloneElement(icon, { sx: { fontSize: 28, color: 'primary.main', mr: 2 } })}
+        {React.cloneElement(icon, { sx: { fontSize: 28, mr: 2 } })}
         <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
           {title}
         </Typography>
@@ -44,13 +44,10 @@ const FinancialPage: React.FC = () => {
           {t('financial.title', 'Financial Services AI')}
         </Typography>
 
-        <Paper 
-          elevation={3} 
+        <Card
           sx={{ 
             p: 4, 
             mb: 6,
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: 2
           }}
         >
           <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 600 }}>
@@ -59,7 +56,7 @@ const FinancialPage: React.FC = () => {
           <Typography paragraph>
             {t('financial.overview.description', 'Our financial services AI solutions are designed to meet the specific needs of Nordic banks, insurance companies, and investment firms, with a strong focus on security, compliance, and data sovereignty.')}
           </Typography>
-        </Paper>
+        </Card>
 
         <Typography 
           variant="h4" 

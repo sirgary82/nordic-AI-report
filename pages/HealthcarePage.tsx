@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Card, CardContent, Grid, Paper } from '@mui/material';
+import { Box, Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import { MedicalServices, Search, HealthAndSafety, Analytics, LocalHospital } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
@@ -11,15 +11,15 @@ interface UseCardProps {
 }
 
 const UseCard: React.FC<UseCardProps> = ({ icon, title, description }) => (
-  <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+  <Card>
     <CardContent sx={{ p: 3 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        {React.cloneElement(icon, { sx: { fontSize: 28, color: 'primary.main', mr: 2 } })}
+        {React.cloneElement(icon, { sx: { fontSize: 28, mr: 2 } })}
         <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
           {title}
         </Typography>
       </Box>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2">
         {description}
       </Typography>
     </CardContent>
@@ -46,12 +46,9 @@ const HealthcarePage: React.FC = () => {
           {t('healthcare.title', 'Healthcare AI Solutions')}
         </Typography>
 
-        <Paper 
-          elevation={3} 
+        <Card
           sx={{ 
-            p: 4, 
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: 2,
+            p: 4,
             mb: 6
           }}
         >
@@ -61,7 +58,7 @@ const HealthcarePage: React.FC = () => {
           <Typography paragraph>
             {t('healthcare.overview.description', 'Our healthcare AI solutions are designed specifically for Nordic healthcare systems, ensuring full compliance with local regulations and data privacy requirements. We help healthcare providers improve patient outcomes while maintaining the highest standards of data security.')}
           </Typography>
-        </Paper>
+        </Card>
 
         <Typography 
           variant="h4" 

@@ -12,7 +12,7 @@ interface TeamMemberProps {
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, title, bio, image }) => {
   return (
-    <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+    <Card>
       <CardContent sx={{ p: 4 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2 }}>
           {/* Provide empty string as fallback for src */}
@@ -22,7 +22,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, bio, image }) => {
             sx={{ width: 120, height: 120, mb: 2 }}
           />
           <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 0.5 }}>{name}</Typography>
-          <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 600, mb: 2 }}>{title}</Typography>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2 }}>{title}</Typography>
         </Box>
         <Typography variant="body1">{bio}</Typography>
       </CardContent>
@@ -42,13 +42,7 @@ const AboutPage: React.FC = () => {
         textAlign: 'center',
       }}>
         <Container maxWidth="md">
-          <Card sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
-            p: { xs: 3, md: 5 },
-          }}>
+          <Card>
             <CardContent>
               <Typography variant="h3" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '1px 1px 3px rgba(0,0,0,0.6)' }}>
                 {t('about_title')}
@@ -66,9 +60,9 @@ const AboutPage: React.FC = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+              <Card>
                 <CardContent sx={{ p: 4 }}>
-                  <Typography variant="h4" component="h2" sx={{ mb: 3, color: 'primary.main', fontWeight: 700 }}>
+                  <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
                     {t('about_mission_title')}
                   </Typography>
                   <Typography variant="body1" paragraph>
@@ -81,9 +75,9 @@ const AboutPage: React.FC = () => {
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+              <Card>
                 <CardContent sx={{ p: 4 }}>
-                  <Typography variant="h4" component="h2" sx={{ mb: 3, color: 'primary.main', fontWeight: 700 }}>
+                  <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
                     {t('about_vision_title')}
                   </Typography>
                   <Typography variant="body1" paragraph>
@@ -102,9 +96,9 @@ const AboutPage: React.FC = () => {
       {/* Company History */}
       <Box sx={{ py: { xs: 4, md: 6 } }}>
         <Container maxWidth="lg">
-          <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', mb: 6 }}>
+          <Card sx={{ mb: 6 }}>
             <CardContent sx={{ p: 4 }}>
-              <Typography variant="h4" component="h2" sx={{ mb: 3, color: 'primary.main', fontWeight: 700, textAlign: 'center' }}>
+              <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 700, textAlign: 'center' }}>
                 {t('about_history_title')}
               </Typography>
               <Typography variant="body1" paragraph>

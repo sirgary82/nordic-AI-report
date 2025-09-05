@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Container, Typography, Grid, Card, CardContent, TextField, Snackbar, Alert, Paper, CircularProgress } from '@mui/material';
+import { Box, Button, Container, Typography, Grid, Card, CardContent, TextField, Snackbar, Alert, CircularProgress } from '@mui/material';
 import { Email, LocationOn, Phone } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
@@ -65,13 +65,7 @@ const ContactPage: React.FC = () => {
     <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM_8_43PM.jpeg">
       <Box sx={{ color: 'white', py: { xs: 8, md: 8 }, textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Card sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
-            p: { xs: 3, md: 5 },
-          }}>
+          <Card>
             <CardContent>
               <Typography 
                 variant="h3" 
@@ -103,10 +97,10 @@ const ContactPage: React.FC = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
-              <Paper sx={{ p: 3, height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)', borderRadius: 2 }}>
+              <Card>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Email color="primary" sx={{ mr: 2, fontSize: 28 }} />
+                    <Email sx={{ mr: 2, fontSize: 28 }} />
                     <Box>
                       <Typography variant="h6" component="h3">Email</Typography>
                       <Typography variant="body1" component="p">info@lkdv.fi</Typography>
@@ -114,7 +108,7 @@ const ContactPage: React.FC = () => {
                   </Box>
                   
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Phone color="primary" sx={{ mr: 2, fontSize: 28 }} />
+                    <Phone sx={{ mr: 2, fontSize: 28 }} />
                     <Box>
                       <Typography variant="h6" component="h3">Phone</Typography>
                       <Typography variant="body1" component="p">+358 50 123 4567</Typography>
@@ -122,7 +116,7 @@ const ContactPage: React.FC = () => {
                   </Box>
                   
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <LocationOn color="primary" sx={{ mr: 2, fontSize: 28 }} />
+                    <LocationOn sx={{ mr: 2, fontSize: 28 }} />
                     <Box>
                       <Typography variant="h6" component="h3">Address</Typography>
                       <Typography variant="body1" component="p">
@@ -133,11 +127,11 @@ const ContactPage: React.FC = () => {
                     </Box>
                   </Box>
                 </Box>
-              </Paper>
+              </Card>
             </Grid>
             
             <Grid item xs={12} md={8}>
-              <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', borderRadius: 2 }}>
+              <Card>
                 <CardContent sx={{ p: 4 }}>
                   <Typography 
                     variant="h5" 
@@ -208,7 +202,7 @@ const ContactPage: React.FC = () => {
                       <Grid item xs={12} sx={{ textAlign: 'center' }}>
                         <Button 
                           variant="contained" 
-                          color="primary"
+                          color="secondary"
                           size="large" 
                           type="submit"
                           disabled={isSubmitting}

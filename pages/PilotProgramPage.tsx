@@ -14,7 +14,6 @@ const PilotProgramPage: React.FC = () => {
     useCase: '',
     challenge: ''
   });
-  const [submitted, setSubmitted] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
@@ -40,7 +39,6 @@ const PilotProgramPage: React.FC = () => {
       });
       
       if (success) {
-        setSubmitted(true);
         setSnackbarSeverity('success');
         setSnackbarMessage(t('pilot_form_success'));
         
@@ -75,13 +73,7 @@ const PilotProgramPage: React.FC = () => {
     <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM_6_46PM.jpeg">
       <Box sx={{ color: 'white', py: { xs: 8, md: 8 }, textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Card sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
-            p: { xs: 3, md: 5 },
-          }}>
+          <Card>
             <CardContent>
               <Typography 
                 variant="h3" 
@@ -111,7 +103,7 @@ const PilotProgramPage: React.FC = () => {
 
       <Box sx={{ py: { xs: 4, md: 6 } }}>
         <Container maxWidth="md">
-          <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', borderRadius: 2 }}>
+          <Card>
             <CardContent sx={{ p: 4 }}>
               <Typography 
                 variant="h4" 
@@ -196,7 +188,7 @@ const PilotProgramPage: React.FC = () => {
                   <Grid item xs={12} sx={{ textAlign: 'center' }}>
                     <Button 
                       variant="contained" 
-                      color="primary"
+                      color="secondary"
                       size="large" 
                       type="submit"
                       disabled={isSubmitting}

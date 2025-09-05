@@ -13,8 +13,8 @@ const theme = createTheme({
       paper: '#ffffff',
     },
     text: {
-      primary: '#212121', // Dark Charcoal Grey from the trees
-      secondary: '#424242', // Lighter grey for secondary text
+      primary: '#ffffff', // White text for dark backgrounds
+      secondary: '#e0e0e0', // Lighter grey for secondary text
     },
   },
   typography: {
@@ -32,13 +32,13 @@ const theme = createTheme({
       fontWeight: 700,
       fontSize: '2.5rem',
       lineHeight: 1.2,
-      color: '#2c3e50', // Dark Slate Blue
+      color: '#ffffff', // White text for dark backgrounds
     },
     h3: {
       fontWeight: 700,
       fontSize: '1.8rem',
       lineHeight: 1.2,
-      color: '#2c3e50', // Dark Slate Blue
+      color: '#ffffff', // White text for dark backgrounds
     },
     button: {
       textTransform: 'none',
@@ -52,7 +52,7 @@ const theme = createTheme({
           borderRadius: 8,
         },
         containedSecondary: {
-            color: '#2c3e50'
+            color: '#ffffff'
         }
       },
     },
@@ -61,9 +61,52 @@ const theme = createTheme({
         root: {
           borderRadius: 12,
           boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(4px)',
-          border: '1px solid rgba(255, 255, 255, 0.18)',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: 3,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          color: 'white',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-root': {
+            color: 'white',
+          },
+          '& .MuiInputLabel-root': {
+            color: 'white',
+          },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'white',
+            },
+            '&:hover fieldset': {
+              borderColor: 'white',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: 'white',
+            },
+          },
         },
       },
     },

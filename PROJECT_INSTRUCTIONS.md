@@ -27,6 +27,7 @@ The project is a single-page application built with the following technologies:
 The design of the website is based on a custom theme created with Material-UI. The front page serves as the primary example to follow for colors, cards, and fonts.
 
 ### Typography
+* Are set in themes in theme/theme.ts *
 
 *   **Font Family**: 'Roboto', sans-serif
 *   **h3**:
@@ -46,9 +47,11 @@ The design of the website is based on a custom theme created with Material-UI. T
     *   `backdropFilter`: 'blur(8px)'
     *   `border`: '1px solid rgba(255, 255, 255, 0.2)'
     *   `borderRadius`: 3
-*   **Buttons (Outlined)**:
-    *   `borderColor`: 'rgba(255,255,255,0.7)'
-    *   `color`: 'white'
+*   **Buttons (Contained)**:
+    *   `variant`: 'contained'
+    *   `color`: 'secondary'
+    *   `size`: 'large'
+    *   `textColor`: '#2c3e50'
 
 ## Call to Action
 

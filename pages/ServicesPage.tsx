@@ -14,14 +14,14 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features }) => {
   return (
-    <Card sx={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+    <Card>
       <CardContent sx={{ p: 4, display: 'flex', flexDirection: 'column', height: '100%' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-          <Box sx={{ mr: 2, color: 'primary.main' }}>{icon}</Box>
+          <Box sx={{ mr: 2 }}>{icon}</Box>
           <Typography variant="h5" component="h3" sx={{ fontWeight: 700 }}>{title}</Typography>
         </Box>
         <Typography variant="body1" paragraph>{description}</Typography>
-        <Divider sx={{ my: 2 }} />
+        <Divider sx={{ my: 2, bgcolor: 'rgba(255, 255, 255, 0.2)' }} />
         <Box component="ul" sx={{ pl: 2, mb: 3, flexGrow: 1 }}>
           {features.map((feature, index) => (
             <Typography component="li" variant="body2" key={index} sx={{ mb: 1 }}>
@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
             </Typography>
           ))}
         </Box>
-        <Button variant="outlined" color="primary" component={Link} to="/contact">
+        <Button variant="contained" color="secondary" component={Link} to="/contact" size="large">
           Request Service
         </Button>
       </CardContent>
@@ -49,13 +49,7 @@ const ServicesPage: React.FC = () => {
         textAlign: 'center',
       }}>
         <Container maxWidth="md">
-          <Card sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
-            p: { xs: 3, md: 5 },
-          }}>
+          <Card>
             <CardContent>
               <Typography variant="h3" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '1px 1px 3px rgba(0,0,0,0.6)' }}>
                 {t('services_title')}
@@ -144,9 +138,9 @@ const ServicesPage: React.FC = () => {
       {/* Custom Solutions */}
       <Box sx={{ py: { xs: 4, md: 6 } }}>
         <Container maxWidth="lg">
-          <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+          <Card>
             <CardContent sx={{ p: 4, textAlign: 'center' }}>
-              <Typography variant="h4" component="h2" sx={{ mb: 3, color: 'primary.main', fontWeight: 700 }}>
+              <Typography variant="h4" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
                 {t('services_custom_title')}
               </Typography>
               <Typography variant="body1" paragraph>
@@ -154,7 +148,7 @@ const ServicesPage: React.FC = () => {
               </Typography>
               <Button 
                 variant="contained" 
-                color="primary" 
+                color="secondary" 
                 size="large"
                 component={Link}
                 to="/contact"
