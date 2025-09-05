@@ -49,12 +49,22 @@ const ServicesPage: React.FC = () => {
         textAlign: 'center',
       }}>
         <Container maxWidth="md">
-          <Typography variant="h3" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-            {t('services_title')}
-          </Typography>
-          <Typography variant="h5" component="p" sx={{ mb: 4, opacity: 0.9, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-            {t('services_subtitle')}
-          </Typography>
+          <Card sx={{
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: 4,
+            p: { xs: 3, md: 5 },
+          }}>
+            <CardContent>
+              <Typography variant="h3" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '1px 1px 3px rgba(0,0,0,0.6)' }}>
+                {t('services_title')}
+              </Typography>
+              <Typography variant="h5" component="p" sx={{ opacity: 0.95, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+                {t('services_subtitle')}
+              </Typography>
+            </CardContent>
+          </Card>
         </Container>
       </Box>
 

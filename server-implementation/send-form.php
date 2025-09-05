@@ -10,6 +10,7 @@
 // Change these settings according to your needs
 
 // Your email address where form submissions will be sent
+// On a Linux server with sendmail, the mail() function will use sendmail by default.
 $recipient_email = "info@lkdv.fi";
 
 // Website domain that's allowed to send requests (CORS)
@@ -111,7 +112,7 @@ if ($data['type'] === 'contact') {
     $message .= "Company: " . htmlspecialchars($data['company']) . "\n";
     $message .= "Job Title: " . htmlspecialchars($data['jobTitle']) . "\n";
     $message .= "Message: \n" . htmlspecialchars($data['message']) . "\n";
-    $message .= "\n---\nThis email was sent from the contact form on your Isolated AI website.";
+    $message .= "\n---\\nThis email was sent from the contact form on your Isolated AI website.";
 } elseif ($data['type'] === 'pilot') {
     // Pilot program submission
     $subject = "Isolated AI: New Pilot Program Application";
@@ -122,7 +123,7 @@ if ($data['type'] === 'contact') {
     $message .= "Industry: " . htmlspecialchars($data['industry']) . "\n";
     $message .= "Use Case: \n" . htmlspecialchars($data['useCase']) . "\n\n";
     $message .= "Challenges: \n" . htmlspecialchars($data['challenge']) . "\n";
-    $message .= "\n---\nThis email was sent from the pilot program form on your Isolated AI website.";
+    $message .= "\n---\\nThis email was sent from the pilot program form on your Isolated AI website.";
 } else {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Invalid form type']);

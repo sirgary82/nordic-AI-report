@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -24,59 +23,81 @@ const MarketSection: React.FC = () => {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant="h2" component="h2" gutterBottom>
-            {t('market.title')}
-          </Typography>
-          <Typography variant="h5" color="text.secondary">
-            {t('market.subtitle')}
-          </Typography>
-        </Box>
-
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Typography variant="h3" component="h3" gutterBottom>{t('market.focus_title')}</Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-              {t('market.focus_desc')}
+        <Card sx={{ 
+          backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: 4,
+          mb: 8 
+        }}>
+          <CardContent sx={{ p: 4, textAlign: 'center' }}>
+            <Typography variant="h2" component="h2" gutterBottom sx={{ 
+              fontWeight: 700,
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+            }}>
+              {t('market.title')}
             </Typography>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <CheckCircleIcon color="secondary" />
-                </ListItemIcon>
-                <ListItemText 
-                  primary={t('market.legal_primary')}
-                  secondary={t('market.legal_secondary')}
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <CheckCircleIcon color="secondary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary={t('market.healthcare_primary')}
-                  secondary={t('market.healthcare_secondary')}
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <CheckCircleIcon color="secondary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary={t('market.financial_primary')}
-                  secondary={t('market.financial_secondary')}
-                />
-              </ListItem>
-            </List>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Card>
-              <CardContent sx={{ height: 400 }}>
-                <ChartComponent type="doughnut" data={marketChartData} />
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+            <Typography variant="h5" sx={{ color: 'white' }}>
+              {t('market.subtitle')}
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card sx={{ 
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(4px)',
+          border: '1px solid rgba(255, 255, 255, 0.18)',
+          borderRadius: 3,
+          mb: 4
+        }}>
+          <CardContent sx={{ p: 4 }}>
+            <Grid container spacing={4} alignItems="center">
+              <Grid item xs={12} md={6}>
+                <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'primary.main' }}>{t('market.focus_title')}</Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                  {t('market.focus_desc')}
+                </Typography>
+                <List>
+                  <ListItem>
+                    <ListItemIcon>
+                      <CheckCircleIcon color="secondary" />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={t('market.legal_primary')}
+                      secondary={t('market.legal_secondary')}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <CheckCircleIcon color="secondary" />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={t('market.healthcare_primary')}
+                      secondary={t('market.healthcare_secondary')}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <CheckCircleIcon color="secondary" />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={t('market.financial_primary')}
+                      secondary={t('market.financial_secondary')}
+                    />
+                  </ListItem>
+                </List>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Card>
+                  <CardContent sx={{ height: 400 }}>
+                    <ChartComponent type="doughnut" data={marketChartData} />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
       </Container>
     </Box>
   );

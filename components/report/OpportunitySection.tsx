@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -20,18 +21,35 @@ const OpportunitySection: React.FC = () => {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant="h2" component="h2" gutterBottom>
-            {t('opportunity.title')}
-          </Typography>
-          <Typography variant="h5" color="text.secondary">
-            {t('opportunity.subtitle')}
-          </Typography>
-        </Box>
-
+        <Card sx={{ 
+          backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: 4,
+          mb: 8 
+        }}>
+          <CardContent sx={{ p: 4, textAlign: 'center' }}>
+            <Typography variant="h2" component="h2" gutterBottom sx={{ 
+              fontWeight: 700,
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+            }}>
+              {t('opportunity.title')}
+            </Typography>
+            <Typography variant="h5" sx={{ color: 'white' }}>
+              {t('opportunity.subtitle')}
+            </Typography>
+          </CardContent>
+        </Card>
         <Grid container spacing={4} sx={{ mb: 8 }}>
           <Grid item xs={12} md={4}>
-            <Card sx={{ height: '100%' }}>
+            <Card sx={{ 
+              height: '100%', 
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+              borderRadius: 3
+            }}>
               <CardContent sx={{ p: 4, textAlign: 'center' }}>
                 <Typography variant="h2" component="p" color="secondary" sx={{ fontWeight: 700 }}>
                   37.6%
@@ -43,7 +61,13 @@ const OpportunitySection: React.FC = () => {
             </Card>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card sx={{ height: '100%' }}>
+            <Card sx={{ 
+              height: '100%', 
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+              borderRadius: 3
+            }}>
               <CardContent sx={{ p: 4, textAlign: 'center' }}>
                 <Typography variant="h2" component="p" color="secondary" sx={{ fontWeight: 700 }}>
                   €2.86B
@@ -55,7 +79,13 @@ const OpportunitySection: React.FC = () => {
             </Card>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card sx={{ height: '100%' }}>
+            <Card sx={{ 
+              height: '100%', 
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+              borderRadius: 3
+            }}>
               <CardContent sx={{ p: 4, textAlign: 'center' }}>
                 <Typography variant="h2" component="p" color="secondary" sx={{ fontWeight: 700 }}>
                   ~70%
@@ -67,23 +97,29 @@ const OpportunitySection: React.FC = () => {
             </Card>
           </Grid>
         </Grid>
-
-        <Card>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h3" component="h3" align="center" gutterBottom>
-              {t('opportunity.chart_title')}
-            </Typography>
-            <Typography variant="body1" color="text.secondary" align="center" sx={{ mb: 4 }}>
-              {t('opportunity.chart_desc')}
-            </Typography>
-            <Box sx={{ height: 400 }}>
-              <ChartComponent type="bar" data={adoptionChartData} />
-            </Box>
-          </CardContent>
-        </Card>
+        <Box sx={{ mb: 8 }}>
+          <Card sx={{ 
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(255, 255, 255, 0.18)',
+            borderRadius: 3
+          }}>
+            <CardContent>
+              <Typography variant="h3" component="h3" align="center" gutterBottom sx={{ color: 'primary.main' }}>
+                {t('opportunity.chart_title')}
+              </Typography>
+              <Typography variant="body1" color="text.secondary" align="center" sx={{ mb: 4 }}>
+                {t('opportunity.chart_desc')}
+              </Typography>
+              <Box sx={{ height: 400 }}>
+                <ChartComponent type="bar" data={adoptionChartData} />
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
       </Container>
     </Box>
   );
-};
+}
 
 export default OpportunitySection;

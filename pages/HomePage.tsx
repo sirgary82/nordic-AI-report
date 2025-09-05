@@ -39,20 +39,30 @@ const HomePage: React.FC = () => {
         minHeight: '60vh',
       }}>
         <Container maxWidth="md">
-          <Typography variant="h2" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-            {t('company_hero_title')}
-          </Typography>
-          <Typography variant="h5" component="p" sx={{ mb: 4, opacity: 0.9, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-            {t('company_hero_subtitle')}
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: 'center', justifyContent: 'center', gap: 2 }}>
-            <Button variant="contained" color="secondary" component={Link} to="/about" size="large">
-              {t('company_about_button')}
-            </Button>
-            <Button variant="outlined" color="inherit" component={Link} to="/services" sx={{ borderColor: 'white', color: 'white' }}>
-              {t('company_services_button')}
-            </Button>
-          </Box>
+          <Card sx={{
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: 4,
+            p: { xs: 3, md: 5 },
+          }}>
+            <CardContent>
+              <Typography variant="h2" component="h1" sx={{ mb: 3, fontWeight: 700, textShadow: '1px 1px 3px rgba(0,0,0,0.6)' }}>
+                {t('company_hero_title')}
+              </Typography>
+              <Typography variant="h5" component="p" sx={{ mb: 4, opacity: 0.95, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+                {t('company_hero_subtitle')}
+              </Typography>
+              <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                <Button variant="contained" color="secondary" component={Link} to="/about" size="large">
+                  {t('company_about_button')}
+                </Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/services" size="large" sx={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}>
+                  {t('company_services_button')}
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
         </Container>
       </Box>
 

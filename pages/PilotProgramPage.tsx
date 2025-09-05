@@ -75,28 +75,37 @@ const PilotProgramPage: React.FC = () => {
     <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM_6_46PM.jpeg">
       <Box sx={{ color: 'white', py: { xs: 8, md: 8 }, textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography 
-            variant="h3" 
-            component="h1" 
-            sx={{ 
-              mb: 3, 
-              fontWeight: 700,
-              textShadow: '1px 1px 4px rgba(0,0,0,0.5)'
-            }}
-          >
-            {t('pilot_title')}
-          </Typography>
-          <Typography 
-            variant="h5" 
-            component="p" 
-            sx={{ 
-              opacity: 0.95,
-              mb: 6, 
-              textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
-            }}
-          >
-            {t('pilot_subtitle')}
-          </Typography>
+          <Card sx={{
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: 4,
+            p: { xs: 3, md: 5 },
+          }}>
+            <CardContent>
+              <Typography 
+                variant="h3" 
+                component="h1" 
+                sx={{ 
+                  mb: 3, 
+                  fontWeight: 700,
+                  textShadow: '1px 1px 4px rgba(0,0,0,0.5)'
+                }}
+              >
+                {t('pilot_title')}
+              </Typography>
+              <Typography 
+                variant="h5" 
+                component="p" 
+                sx={{ 
+                  opacity: 0.95,
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+                }}
+              >
+                {t('pilot_subtitle')}
+              </Typography>
+            </CardContent>
+          </Card>
         </Container>
       </Box>
 
