@@ -34,7 +34,8 @@
     // Recommended Options
     "strict": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client"]
   },
   "include": ["src", "components", "pages", "theme", "main.tsx", "App.tsx", "i18n.ts"]
 }

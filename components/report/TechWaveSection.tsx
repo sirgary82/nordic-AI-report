@@ -80,13 +80,7 @@ const TechWaveSection: React.FC = () => {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Card sx={{ 
-          backgroundColor: 'rgba(0, 0, 0, 0.4)', 
-          backdropFilter: 'blur(8px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: 4,
-          mb: 8 
-        }}>
+        <Card sx={{ mb: 8 }}>
           <CardContent sx={{ p: 4, textAlign: 'center' }}>
             <Typography variant="h2" component="h2" gutterBottom sx={{ 
               fontWeight: 700,
@@ -110,23 +104,17 @@ const TechWaveSection: React.FC = () => {
         </Box>
 
         <TabPanel value={value} index={0}>
-          <Card sx={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid rgba(255, 255, 255, 0.18)',
-            borderRadius: 3,
-            mb: 4
-          }}>
+          <Card sx={{ mb: 4 }}>
             <CardContent sx={{ p: 4 }}>
               <Grid container spacing={4} alignItems="center">
                 <Grid item xs={12} md={6}>
-                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'primary.main' }}>{t('techwave.confidential_title')}</Typography>
+                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'white' }}>{t('techwave.confidential_title')}</Typography>
                   <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
                     {t('techwave.confidential_desc')}
                   </Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.confidential_market_label')}</strong> {t('techwave.confidential_market_value')}</Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.confidential_growth_label')}</strong> {t('techwave.confidential_growth_value')}</Typography>
-                  <Typography variant="body1"><strong style={{color: '#34495e'}}>{t('techwave.confidential_local_label')}</strong> {t('techwave.confidential_local_value')}</Typography>
+                  <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.confidential_local_label')}</strong> {t('techwave.confidential_local_value')}</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card>
@@ -141,23 +129,17 @@ const TechWaveSection: React.FC = () => {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <Card sx={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid rgba(255, 255, 255, 0.18)',
-            borderRadius: 3,
-            mb: 4
-          }}>
+          <Card sx={{ mb: 4 }}>
             <CardContent sx={{ p: 4 }}>
               <Grid container spacing={4} alignItems="center">
                 <Grid item xs={12} md={6}>
-                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'primary.main' }}>{t('techwave.rag_title')}</Typography>
+                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'white' }}>{t('techwave.rag_title')}</Typography>
                   <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
                     {t('techwave.rag_desc')}
                   </Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.rag_market_label')}</strong> {t('techwave.rag_market_value')}</Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.rag_growth_label')}</strong> {t('techwave.rag_growth_value')}</Typography>
-                  <Typography variant="body1"><strong style={{color: '#34495e'}}>{t('techwave.rag_local_label')}</strong> {t('techwave.rag_local_value')}</Typography>
+                  <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.rag_local_label')}</strong> {t('techwave.rag_local_value')}</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card>
@@ -172,23 +154,17 @@ const TechWaveSection: React.FC = () => {
         </TabPanel>
 
         <TabPanel value={value} index={2}>
-          <Card sx={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid rgba(255, 255, 255, 0.18)',
-            borderRadius: 3,
-            mb: 4
-          }}>
+          <Card sx={{ mb: 4 }}>
             <CardContent sx={{ p: 4 }}>
               <Grid container spacing={4} alignItems="center">
                 <Grid item xs={12} md={6}>
-                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'primary.main' }}>{t('techwave.agentic_title')}</Typography>
+                  <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'white' }}>{t('techwave.agentic_title')}</Typography>
                   <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
                     {t('techwave.agentic_desc')}
                   </Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.agentic_market_label')}</strong> {t('techwave.agentic_market_value')}</Typography>
                   <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.agentic_adoption_label')}</strong> {t('techwave.agentic_adoption_value')}</Typography>
-                  <Typography variant="body1"><strong style={{color: '#34495e'}}>{t('techwave.agentic_local_label')}</strong> {t('techwave.agentic_local_value')}</Typography>
+                  <Typography variant="body1"><strong style={{color: '#00f2ea'}}>{t('techwave.agentic_local_label')}</strong> {t('techwave.agentic_local_value')}</Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <Card>

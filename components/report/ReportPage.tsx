@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-const ReportPage: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const ReportPage: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <Box sx={{
       position: 'relative',

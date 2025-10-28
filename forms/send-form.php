@@ -13,9 +13,14 @@
 // On a Linux server with sendmail, the mail() function will use sendmail by default.
 $recipient_email = "info@lkdv.fi";
 
-// Website domain that's allowed to send requests (CORS)
-// Change this to your domain
-$allowed_origin = "https://lkdv.fi";
+// Website domains that are allowed to send requests (CORS)
+// Add your allowed domains here
+$allowed_origins = [
+    "https://lkdv.fi",
+    "https://www.lkdv.fi",
+    "https://sirgary82.github.io",
+    "https://isolated-ai.com"
+];
 
 // Add a basic security token (shared secret between this script and your frontend)
 // Change this to a random string and make sure it matches what you set in your frontend
@@ -25,10 +30,17 @@ $security_token = "A9f3dR7xH2pQ5sT1zL8mN6bV0cK4eG";
 $rate_limit_file = "rate_limit.txt";
 $max_submissions_per_hour = 10;
 
+
 // ===== CORS HEADERS =====
-header("Access-Control-Allow-Origin: $allowed_origin");
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+} else {
+    header("Access-Control-Allow-Origin: https://lkdv.fi"); // fallback or default
+}
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, X-Security-Token");
+header("Vary: Origin");
+header("Content-Type: application/json; charset=UTF-8");
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -101,21 +113,25 @@ $to = $recipient_email;
 $subject = "";
 $message = "";
 $email_from = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
+// Sanitize name for header usage to prevent header injection
+$raw_name = isset($data['name']) ? $data['name'] : '';
+$safe_name = preg_replace('/[\r\n]+/', ' ', trim($raw_name));
+$safe_name = substr($safe_name, 0, 128);
 
 // Prepare message based on form type
 if ($data['type'] === 'contact') {
     // Contact form submission
-    $subject = "Isolated AI: New Contact Form Submission";
+    $subject = "LKDV Solutions: New Contact Form Submission";
     $message = "Contact Form Submission Details:\n\n";
     $message .= "Name: " . htmlspecialchars($data['name']) . "\n";
     $message .= "Email: " . htmlspecialchars($data['email']) . "\n";
     $message .= "Company: " . htmlspecialchars($data['company']) . "\n";
     $message .= "Job Title: " . htmlspecialchars($data['jobTitle']) . "\n";
     $message .= "Message: \n" . htmlspecialchars($data['message']) . "\n";
-    $message .= "\n---\\nThis email was sent from the contact form on your Isolated AI website.";
+    $message .= "\n---\\nThis email was sent from the contact form on your LKDV Solutions website.";
 } elseif ($data['type'] === 'pilot') {
     // Pilot program submission
-    $subject = "Isolated AI: New Pilot Program Application";
+    $subject = "LKDV Solutions: New Pilot Program Application";
     $message = "Pilot Program Application Details:\n\n";
     $message .= "Name: " . htmlspecialchars($data['name']) . "\n";
     $message .= "Email: " . htmlspecialchars($data['email']) . "\n";
@@ -131,8 +147,8 @@ if ($data['type'] === 'contact') {
 }
 
 // Email headers
-$headers = "From: Isolated AI Website <$email_from>\r\n";
-$headers .= "Reply-To: " . htmlspecialchars($data['name']) . " <$email_from>\r\n";
+$headers = "From: LKDV Solutions Website <$email_from>\r\n";
+$headers .= "Reply-To: " . $safe_name . " <$email_from>\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 

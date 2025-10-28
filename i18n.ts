@@ -8,19 +8,29 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['en', 'fi'],
+    supportedLngs: ['fi', 'en'],
     fallbackLng: 'fi',
     defaultNS: 'translation',
     detection: {
-      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
-      caches: ['cookie'],
+      // Prefer explicit choice; default via <html lang> before navigator
+      order: ['cookie', 'localStorage', 'htmlTag', 'navigator'],
+      caches: ['cookie', 'localStorage'],
     },
     backend: {
-      loadPath: './locales/{{lng}}/{{ns}}.json',
+      // Respect Vite base path in prod (supports subpaths like GH Pages)
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`,
     },
     react: {
       useSuspense: false,
     },
+    load: 'languageOnly',
   });
+
+// Keep <html lang> in sync for a11y/SEO and language detection
+i18n.on('languageChanged', (lng) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = lng;
+  }
+});
 
 export default i18n;

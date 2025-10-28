@@ -10,9 +10,11 @@ interface ServiceCardProps {
   title: string;
   description: string;
   features: string[];
+  ctaHref?: string; // optional external CTA link (e.g., webshop)
+  ctaLabel?: string; // optional CTA label (localized)
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features, ctaHref, ctaLabel }) => {
   return (
     <Card>
       <CardContent sx={{ p: 4, display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -29,9 +31,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
             </Typography>
           ))}
         </Box>
-        <Button variant="contained" color="secondary" component={Link} to="/contact" size="large">
-          Request Service
-        </Button>
+        {ctaHref ? (
+          <Button
+            variant="contained"
+            color="secondary"
+            component="a"
+            href={ctaHref}
+            target="_blank"
+            rel="noopener"
+            size="large"
+          >
+            {ctaLabel ?? 'Go to Webshop'}
+          </Button>
+        ) : (
+          <Button variant="contained" color="secondary" component={Link} to="/contact" size="large">
+            {ctaLabel ?? 'Request Service'}
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
@@ -77,6 +93,8 @@ const ServicesPage: React.FC = () => {
                   t('services_strategy_feature3'),
                   t('services_strategy_feature4')
                 ]}
+                ctaHref="https://holvi.com/shop/LKDVOy/"
+                ctaLabel={t('services_webshop_cta')}
               />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
@@ -90,6 +108,7 @@ const ServicesPage: React.FC = () => {
                   t('services_implementation_feature3'),
                   t('services_implementation_feature4')
                 ]}
+                ctaLabel={t('services_impl_cta')}
               />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
@@ -103,6 +122,7 @@ const ServicesPage: React.FC = () => {
                   t('services_security_feature3'),
                   t('services_security_feature4')
                 ]}
+                ctaLabel={t('services_security_cta')}
               />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
@@ -116,6 +136,7 @@ const ServicesPage: React.FC = () => {
                   t('services_compliance_feature3'),
                   t('services_compliance_feature4')
                 ]}
+                ctaLabel={t('services_compliance_cta')}
               />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
@@ -129,6 +150,7 @@ const ServicesPage: React.FC = () => {
                   t('services_training_feature3'),
                   t('services_training_feature4')
                 ]}
+                ctaLabel={t('services_training_cta')}
               />
             </Grid>
           </Grid>

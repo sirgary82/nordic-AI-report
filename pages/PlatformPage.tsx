@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent } from '@mui/material';
 import { CheckCircleOutline, Security, Storage, Code } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';

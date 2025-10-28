@@ -204,7 +204,7 @@ const HomePage: React.FC = () => {
             </Grid>
             <Grid item xs={12} md={6}>
                 <ValuePropCard 
-                    icon="🇺"
+                    icon="🇪🇺"
                     title={t('company_value_prop_2_title')}
                     subtitle={t('company_value_prop_2_subtitle')}
                     items={[

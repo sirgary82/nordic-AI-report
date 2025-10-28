@@ -22,15 +22,10 @@ const Navbar: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   
   const [productsAnchorEl, setProductsAnchorEl] = useState<null | HTMLElement>(null);
-  const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileAnchorEl, setMobileAnchorEl] = useState<null | HTMLElement>(null);
   
   const handleProductsClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setProductsAnchorEl(event.currentTarget);
-  };
-  
-  const handleServicesClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setServicesAnchorEl(event.currentTarget);
   };
   
   const handleMobileMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -39,10 +34,6 @@ const Navbar: React.FC = () => {
   
   const handleProductsClose = () => {
     setProductsAnchorEl(null);
-  };
-  
-  const handleServicesClose = () => {
-    setServicesAnchorEl(null);
   };
   
   const handleMobileClose = () => {

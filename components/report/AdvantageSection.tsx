@@ -8,18 +8,12 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import SpeedIcon from '@mui/icons-material/Speed';
 
 const AdvantageCard: React.FC<{ icon: React.ReactElement; title: string; description: string }> = ({ icon, title, description }) => (
-  <Card sx={{ 
-    height: '100%', 
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: 'blur(4px)',
-    border: '1px solid rgba(255, 255, 255, 0.18)',
-    borderRadius: 3
-  }}>
+  <Card sx={{ height: '100%' }}>
     <CardContent sx={{ p: 4, textAlign: 'center' }}>
       <Box sx={{ mb: 2 }}>
         {React.cloneElement(icon, { sx: { fontSize: 40, color: 'secondary.main' } })}
       </Box>
-      <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 700, color: 'primary.main' }}>
+      <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 700, color: 'white' }}>
         {title}
       </Typography>
       <Typography color="text.secondary">
@@ -34,13 +28,7 @@ const AdvantageSection: React.FC = () => {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Card sx={{ 
-          backgroundColor: 'rgba(0, 0, 0, 0.4)', 
-          backdropFilter: 'blur(8px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: 4,
-          mb: 8 
-        }}>
+        <Card sx={{ mb: 8 }}>
           <CardContent sx={{ p: 4, textAlign: 'center' }}>
             <Typography variant="h2" component="h2" gutterBottom sx={{ 
               fontWeight: 700,

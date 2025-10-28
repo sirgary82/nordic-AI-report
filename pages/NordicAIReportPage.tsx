@@ -10,6 +10,7 @@ import PageContainer from '../components/PageContainer';
 
 const NordicAIReportPage: React.FC = () => {
     const { t } = useTranslation();
+
     return (
         <PageContainer backgroundImage="/images/LKDV_website_layout_1_57PM.jpeg">
             <Box sx={{ py: 8, textAlign: 'center', color: 'text.primary' }}>
@@ -21,20 +22,20 @@ const NordicAIReportPage: React.FC = () => {
                             gutterBottom
                             sx={{ 
                                 textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-                                fontWeight: 700 
+                                fontWeight: 700
                             }}
                         >
-                            The Nordic AI Advantage Report
+                            {t('report.title')}
                         </Typography>
                         <Typography 
                             variant="h5" 
                             component="p" 
                             sx={{ 
                                 mb: 4, 
-                                textShadow: '1px 1px 2px rgba(0,0,0,0.2)' 
+                                textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
                             }}
                         >
-                            A monumental shift is underway. While 90% of global AI projects fail, our Nordic approach delivers working solutions that create real business value.
+                            {t('report.intro')}
                         </Typography>
                     </Card>
                 </Container>
@@ -44,17 +45,17 @@ const NordicAIReportPage: React.FC = () => {
             <Container maxWidth="lg" sx={{ mb: 6 }}>
                 <Card>
                     <CardContent sx={{ p: 4 }}>
-                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            The 10% That Succeed
+                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
+                            {t('report.ten_percent.title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Recent research confirms that 90% of AI projects fail to deliver meaningful business value. At LKDV, we're focused on being part of the successful 10% by emphasizing practical implementation over hype.
+                            {t('report.ten_percent.p1')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Our success comes from understanding that AI is not about replacing human expertise but enhancing it. We work with customers who are willing to adapt and learn, integrating AI tools into their workflows thoughtfully rather than disrupting everything.
+                            {t('report.ten_percent.p2')}
                         </Typography>
                         <Typography variant="body1">
-                            The key difference: We build solutions that actually work, not just in demos but in your daily operations.
+                            {t('report.ten_percent.p3')}
                         </Typography>
                     </CardContent>
                 </Card>
@@ -64,42 +65,42 @@ const NordicAIReportPage: React.FC = () => {
             <Container maxWidth="lg" sx={{ mb: 6 }}>
                 <Card>
                     <CardContent sx={{ p: 4 }}>
-                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            The Unmatched Finnish Advantage
+                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
+                            {t('advantage.title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Our Isolated AI Platform offers a unique value proposition that global providers cannot match, built on four pillars of local expertise and technological superiority.
+                            {t('advantage.subtitle')}
                         </Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} lg={3}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>Language Depth</Typography>
-                                        <Typography variant="body2">Superior understanding of Finnish grammar, legal terminology, and business context.</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('advantage.card1_title')}</Typography>
+                                        <Typography variant="body2">{t('advantage.card1_desc')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={6} lg={3}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>Local Integration</Typography>
-                                        <Typography variant="body2">Direct access to Finnish open source data like YTJ business registry, Finlex, and Statistics Finland.</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('advantage.card2_title')}</Typography>
+                                        <Typography variant="body2">{t('advantage.card2_desc')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={6} lg={3}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>Compliance Specialization</Typography>
-                                        <Typography variant="body2">Deep understanding of Finnish GDPR interpretation, legislation on highly regulated markets, and local regulatory nuances.</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('advantage.card3_title')}</Typography>
+                                        <Typography variant="body2">{t('advantage.card3_desc')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={6} lg={3}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>Speed to Market</Typography>
-                                        <Typography variant="body2">With a 95% complete MVP, the platform offers a significant head start in capturing the market.</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('advantage.card4_title')}</Typography>
+                                        <Typography variant="body2">{t('advantage.card4_desc')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -113,17 +114,17 @@ const NordicAIReportPage: React.FC = () => {
                 <Card>
                     <CardContent sx={{ p: 4 }}>
                         <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            Enterprise AI: The Boom is Here
+                            {t('opportunity.title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            The era of AI experimentation is over. For Finnish and Nordic enterprises, AI is now a core operational component, creating a massive market for solutions that respect data sovereignty.
+                            {t('opportunity.subtitle')}
                         </Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={4}>
                                 <Card>
                                     <CardContent sx={{ textAlign: 'center' }}>
                                         <Typography variant="h2" sx={{ fontWeight: 700 }}>37.6%</Typography>
-                                        <Typography variant="subtitle1">Global Enterprise AI CAGR (2025-2030)</Typography>
+                                        <Typography variant="subtitle1">{t('opportunity.stat_cagr')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -131,7 +132,7 @@ const NordicAIReportPage: React.FC = () => {
                                 <Card>
                                     <CardContent sx={{ textAlign: 'center' }}>
                                         <Typography variant="h2" sx={{ fontWeight: 700 }}>€2.86B</Typography>
-                                        <Typography variant="subtitle1">Finnish AI Market by 2030 (Projected)</Typography>
+                                        <Typography variant="subtitle1">{t('opportunity.stat_market')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -139,7 +140,7 @@ const NordicAIReportPage: React.FC = () => {
                                 <Card>
                                     <CardContent sx={{ textAlign: 'center' }}>
                                         <Typography variant="h2" sx={{ fontWeight: 700 }}>~70%</Typography>
-                                        <Typography variant="subtitle1">of large Finnish firms using AI (up from 53% in 2023)</Typography>
+                                        <Typography variant="subtitle1">{t('opportunity.stat_firms')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -153,10 +154,10 @@ const NordicAIReportPage: React.FC = () => {
                 <Card>
                     <CardContent sx={{ p: 4 }}>
                         <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            Finland Leads the Charge in AI Adoption
+                            {t('opportunity.chart_title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Nordic countries are Europe's top AI adopters. Among large enterprises, Finland shows an exceptional commitment, significantly outpacing the EU average and demonstrating a mature market ready for advanced solutions.
+                            {t('opportunity.chart_desc')}
                         </Typography>
                     </CardContent>
                 </Card>
@@ -166,37 +167,37 @@ const NordicAIReportPage: React.FC = () => {
             <Container maxWidth="lg" sx={{ mb: 6 }}>
                 <Card>
                     <CardContent sx={{ p: 4 }}>
-                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            Capturing the €500M+ Market
+                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
+                            {t('market.title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Our strategy focuses on dominating the Finnish market first, then expanding to the broader Nordic region and other small-language nations with similar sovereignty needs.
+                            {t('market.subtitle')}
                         </Typography>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mt: 3, mb: 2 }}>
-                            Strategic Focus Areas
+                        <Typography variant="h5" sx={{ fontWeight: 700, mt: 3, mb: 2, color: 'white' }}>
+                            {t('market.focus_title')}
                         </Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={4}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>Legal Firms (~€50M opportunity)</Typography>
-                                        <Typography variant="body2">Providing RAG solutions for case law and document analysis with Finnish legal terminology.</Typography>
+                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{t('market.legal_primary')}</Typography>
+                                        <Typography variant="body2">{t('market.legal_secondary')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={4}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>Healthcare</Typography>
-                                        <Typography variant="body2">Addressing HIPAA compliance needs with secure analysis of patient data using Finnish medical terms.</Typography>
+                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{t('market.healthcare_primary')}</Typography>
+                                        <Typography variant="body2">{t('market.healthcare_secondary')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={4}>
                                 <Card>
                                     <CardContent>
-                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>Financial Services</Typography>
-                                        <Typography variant="body2">Meeting strict GDPR requirements with local business intelligence and secure transaction analysis.</Typography>
+                                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{t('market.financial_primary')}</Typography>
+                                        <Typography variant="body2">{t('market.financial_secondary')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -209,38 +210,38 @@ const NordicAIReportPage: React.FC = () => {
             <Container maxWidth="lg" sx={{ mb: 6 }}>
                 <Card>
                     <CardContent sx={{ p: 4 }}>
-                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                            The Tech Wave Fueling the Growth
+                        <Typography variant="h4" component="h2" sx={{ fontWeight: 700, mb: 2, textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
+                            {t('techwave.title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Three critical technology trends are converging to unlock the next generation of enterprise AI, each creating its own multi-billion euro market.
+                            {t('techwave.subtitle')}
                         </Typography>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mt: 3, mb: 2 }}>
-                            The Bedrock of Trusted AI
+                        <Typography variant="h5" sx={{ fontWeight: 700, mt: 3, mb: 2, color: 'white' }}>
+                            {t('techwave.confidential_title')}
                         </Typography>
                         <Typography variant="body1" paragraph>
-                            Securing data during processing is paramount for regulated industries. Confidential Computing is the key, with Europe's market growing faster than North America's.
+                            {t('techwave.confidential_desc')}
                         </Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6}>
                                 <Card>
                                     <CardContent sx={{ textAlign: 'center' }}>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>Global Market</Typography>
-                                        <Typography variant="body2">~$5.5B (2023) ➔ ~$154B (2030)</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('techwave.confidential_market_label')}</Typography>
+                                        <Typography variant="body2">{t('techwave.confidential_market_value')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={6}>
                                 <Card>
                                     <CardContent sx={{ textAlign: 'center' }}>
-                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>European Growth</Typography>
-                                        <Typography variant="body2">~62% CAGR, outpacing global average.</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 700 }}>{t('techwave.confidential_growth_label')}</Typography>
+                                        <Typography variant="body2">{t('techwave.confidential_growth_value')}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
                         </Grid>
                         <Typography variant="body1" paragraph sx={{ mt: 3 }}>
-                            Local Driver: Essential for GDPR & HIPAA compliance, enabling AI on sensitive data. Our platform is built on this principle.
+                            <Box component="span" sx={{ color: 'secondary.main', fontWeight: 700 }}>{t('techwave.confidential_local_label')}</Box> {t('techwave.confidential_local_value')}
                         </Typography>
                     </CardContent>
                 </Card>

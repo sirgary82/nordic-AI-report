@@ -23,13 +23,7 @@ const MarketSection: React.FC = () => {
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Card sx={{ 
-          backgroundColor: 'rgba(0, 0, 0, 0.4)', 
-          backdropFilter: 'blur(8px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: 4,
-          mb: 8 
-        }}>
+        <Card sx={{ mb: 8 }}>
           <CardContent sx={{ p: 4, textAlign: 'center' }}>
             <Typography variant="h2" component="h2" gutterBottom sx={{ 
               fontWeight: 700,
@@ -44,18 +38,12 @@ const MarketSection: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Card sx={{ 
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(4px)',
-          border: '1px solid rgba(255, 255, 255, 0.18)',
-          borderRadius: 3,
-          mb: 4
-        }}>
+        <Card sx={{ mb: 4 }}>
           <CardContent sx={{ p: 4 }}>
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6}>
-                <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'primary.main' }}>{t('market.focus_title')}</Typography>
-                <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                <Typography variant="h3" component="h3" gutterBottom sx={{ color: 'white' }}>{t('market.focus_title')}</Typography>
+                <Typography variant="body1" sx={{ mb: 2, color: 'white' }}>
                   {t('market.focus_desc')}
                 </Typography>
                 <List>
